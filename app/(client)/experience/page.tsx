@@ -6,7 +6,7 @@ import { MdArrowOutward } from "react-icons/md";
 const ExperiencePage = () => {
   const { data, loading, error } = useExperience();
 
-  if (loading) return <p className="text-center">Experience Loading...</p>;
+  if (loading) return <p className="text-center mt-10">Loading experience...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (

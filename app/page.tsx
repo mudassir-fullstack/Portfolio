@@ -7,11 +7,12 @@ import LanguagesPage from "./(client)/language/page";
 import LinksPage from "./(client)/links/page";
 import SkillsPage from "./(client)/skills/page";
 import SummaryPage from "./(client)/summary/page";
-
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <>
+    <Header />
  <AboutPage />
  <SummaryPage />
  <ExperiencePage />

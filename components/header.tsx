@@ -6,13 +6,17 @@ import { SlBriefcase } from "react-icons/sl";
 import { GrDocumentText } from "react-icons/gr";
 import { BsLightningCharge } from "react-icons/bs";
 import { IoIosLink } from "react-icons/io";
-import ThemeToggle from "./themeToggle";
-import Resume from "./resume";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
-
+  
+useEffect(() => {
+  window.scrollTo(0, 0);
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname);
+  }
+}, []); 
   // 🌫 Navbar background when scrolling
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +50,6 @@ const Header = () => {
 
   return (
     <section>
-      <Resume />
 
       <nav
         className={`fixed bottom-4 left-1/2 -translate-x-1/2

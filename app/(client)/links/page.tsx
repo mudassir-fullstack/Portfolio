@@ -5,7 +5,7 @@ import { useLinks } from "@/hooks/useLinks";
 const LinksPage = () => {
   const { data, loading, error } = useLinks();
 
-  if (loading) return <p>Loading links...</p>;
+  if (loading) return <p className="text-center mt-10">Loading links...</p>;
   if (error) return <p>{error}</p>;
 
   return (

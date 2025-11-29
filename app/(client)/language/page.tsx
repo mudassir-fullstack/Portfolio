@@ -12,7 +12,7 @@ const proficiencyLevels: Record<string, number> = {
 const LanguagesPage = () => {
   const { data, loading, error } = useLanguages();
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-center mt-10">Loading languages...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (

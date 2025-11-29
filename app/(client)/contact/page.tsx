@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { toast, Toaster } from "react-hot-toast";
 const ContactPage = () => {
   const [form, setForm] = useState({
     name: "",
@@ -32,7 +32,8 @@ const ContactPage = () => {
       const data = await res.json();
 
       if (data.success) {
-        setStatus("✅ Message sent successfully!");
+toast.success("Message sent successfully!")
+      
         setForm({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
         setStatus(`❌ ${data.message || "Something went wrong"}`);
@@ -88,18 +89,17 @@ const ContactPage = () => {
           />
         </div>
 
-        <div className="col-span-1 sm:col-span-2">
+        <div className="col-span-1  sm:col-span-2">
           <button
             type="submit"
             disabled={loading}
-            className="border px-4 py-2 rounded w-full sm:w-auto"
+            className="border float-end px-4 py-2 rounded w-full sm:w-auto"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
         </div>
+         <Toaster />
       </form>
-
-      {status && <p className="mt-4">{status}</p>}
     </section>
   );
 };

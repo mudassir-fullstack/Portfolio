@@ -1,5 +1,6 @@
+"use client"
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ContactType } from "@/types/contact";
 
 export const useContact = () => {
@@ -21,3 +22,29 @@ export const useContact = () => {
 
   return { sendMessage, loading, success, error };
 };
+
+export function ContactList() {
+  const [contacts, setContacts] = useState<ContactType[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const res = await axios.get("/api/contact");
+        setContacts(res.data.data);
+
+      } catch (err: any) {
+        setError(err.message || "Something went wrong");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContacts();
+  }, []); 
+  return {contacts, loading, error}
+}

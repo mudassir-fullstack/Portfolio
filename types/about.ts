@@ -1,5 +1,5 @@
 export interface About {
-    _id?:string;
+    _id?:string | '';
     profilePicture?: string;
     name: string;
     email: string;
@@ -7,5 +7,5 @@ export interface About {
     phone: string;
     address?: string;
     linkedin: string;
-    title?: string[];
+    title: string[];
 }

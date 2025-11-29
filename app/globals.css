@@ -60,8 +60,7 @@
   --heading-color: #1d4ed8;
   --icon-color: #1d4ed8;
   --dot-color: #1d4ed8;
-
-}
+ }
 
 /* 🌙 Dark Theme */
 :root[data-theme="dark"] {
@@ -269,4 +268,67 @@ h1:hover, h2:hover, h3:hover {
 /* Apply to all top-level sections or elements */
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Admin Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px  4px var(--primary);
+}
+
+thead {
+  background: var(--primary);
+color: var(--button-text);
+}
+
+th {
+  padding: 14px 18px;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--primary);
+}
+
+td {
+  padding: 14px 18px;
+  color: var(--text-color);
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background: var(--background-color);
+  transform: scale(1.01);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Buttons */
+.button2 {
+  
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

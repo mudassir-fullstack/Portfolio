@@ -17,7 +17,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const router = useRouter();
   const { data, loading, error } = useExperience();
 
-  if (loading) return <p className="text-center py-20">Loading project...</p>;
+  if (loading) return <p className="text-center mt-10">Loading project...</p>;
   if (error) return <p className="text-center">{error}</p>;
   if (!data || !Array.isArray(data)) return notFound();
 
@@ -43,7 +43,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     foundExperience?.projects?.filter((p) => p.title !== foundProject?.title) || [];
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-28 grid gap-12">
+    <section className="max-w-6xl mx-auto px-4 py-10 grid gap-12 fade-in-up">
       {/* 🔙 Back Button */}
       <button
         onClick={() => router.back()}

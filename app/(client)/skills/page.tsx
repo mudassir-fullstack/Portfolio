@@ -6,7 +6,7 @@ import { SkillType } from "@/types/skills";
 const SkillsPage = () => {
   const { data: skills, loading, error } = useSkillsAndTools("skill");
  const { data: tools, loading: loadingTools, error: errorTools } = useSkillsAndTools("tool");
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-center mt-10">Loading skills...</p>;
   if (error) return <p>{error}</p>;
 
  // ✅ Only group skills that have a level — prevents “Other” showing

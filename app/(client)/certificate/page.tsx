@@ -6,7 +6,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 const CertificatesPage = () => {
   const { data, loading, error } = useCertificates();
 
-  if (loading) return <p>Loading certificates...</p>;
+  if (loading) return <p className="text-center mt-10">Loading certificates...</p>;
   if (error) return <p>{error}</p>;
 
   return (

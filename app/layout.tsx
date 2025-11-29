@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
-
-import Header from "@/components/header";
+import Resume from "@/components/resume";
 import { ThemeProvider } from "@/hooks/useThemeContext";
 
 // ✅ Professional fonts
@@ -48,17 +47,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Muhammad Mudassir", url: "https://www.linkedin.com/in/muhammad-mudassir-31873138a" }],
   creator: "Muhammad Mudassir",
   publisher: "Muhammad Mudassir",
-  metadataBase: new URL("https://mudassirdev.vercel.app"),
+  metadataBase: new URL("https://mudassir-fullstack-portfolio.vercel.app/"),
   openGraph: {
     title: "Muhammad Mudassir | Full Stack Developer Portfolio",
     description:
       "Explore the portfolio of Muhammad Mudassir — a Full Stack Developer passionate about modern web development using Next.js, React, Node.js, and MongoDB.",
-    url: "https://mudassirdev.vercel.app",
+    url: "https://mudassir-fullstack-portfolio.vercel.app/",
     siteName: "Muhammad Mudassir Portfolio",
    
     images: [
       {
-        url: "https://mudassirdev.vercel.app/og-image.jpg", 
+        url: "https://mudassir-fullstack-portfolio.vercel.app/", 
         width: 1200,
         height: 630,
         alt: "Muhammad Mudassir Portfolio Preview",
@@ -73,10 +72,10 @@ export const metadata: Metadata = {
     description:
       "Discover Muhammad Mudassir’s portfolio — Full Stack Developer skilled in Next.js, React, Node.js, and MongoDB.",
     creator: "@mudassirdev", // add your handle if available
-    images: ["https://mudassirdev.vercel.app/og-image.jpg"],
+    images: ["https://mudassir-fullstack-portfolio.vercel.app//og-image.jpg"],
   },
   alternates: {
-    canonical: "https://mudassirdev.vercel.app",
+    canonical: "https://mudassir-fullstack-portfolio.vercel.app/",
   },
   verification: {
     me: "https://www.linkedin.com/in/muhammad-mudassir-31873138a",
@@ -91,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           bg-#231917 transition-colors duration-300`}
       >
         <ThemeProvider> 
-          <Header />
+          <Resume />
           {children}
           </ThemeProvider>
       </body>

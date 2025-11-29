@@ -4,9 +4,7 @@ import {
   FiMail, 
   FiPhone, 
   FiLinkedin, 
-  FiMapPin 
 } from "react-icons/fi";
-
 import { useAbout } from "@/hooks/useAbout";
 import { About as AboutType } from "@/types/about";
 
@@ -36,7 +34,7 @@ const [text, setText] = useState("");
   }, [char, index, titles]);
 
 
- if (loading) return <p className="text-center mt-10">About Loading ...</p>;
+ if (loading) return <p className="text-center mt-10">Loading about...</p>;
   if (error) return <p className="text-center mt-10 text-red-500">Error: {error}</p>;
   return (
     <section className="pt-6 pb-20 md:pb-32 fade-in-up" id="home">
@@ -106,7 +104,7 @@ const [text, setText] = useState("");
           </div>
 
           {/* Row 2 */}
-          <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+          <div className="flex items-center  gap-2  sm:col-span-1">
             <FiLinkedin className="icon" />
             <a
               href={
@@ -116,15 +114,15 @@ const [text, setText] = useState("");
   }
              target="_blank"
               rel="noopener noreferrer"
-              className="anker"
+              className="anker md:text-nowrap "
             >
               {item.linkedin}
             </a>
           </div>
-          <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
+          {/* <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
             <FiMapPin className="icon" />
             <span>{item.address}</span>
-          </div>
+          </div> */}
         </div>
       </div>
         </main>
