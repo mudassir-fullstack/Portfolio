@@ -67,7 +67,7 @@ export const GET = async () => {
     }
 
     return NextResponse.json(
-      { success: true, data },
+      { success: true, data, message: "Contacts fetched successfully" },
       { status: 200 }
     );
   } catch (error: any) {
